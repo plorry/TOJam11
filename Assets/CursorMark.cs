@@ -14,8 +14,15 @@ public class CursorMark : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!target) {
+			Destroy(gameObject);
+			return;
+		}
+
 		transform.LookAt (myCamera.transform.position);
 		myVector = target.transform.position - myCamera.transform.position;
 		transform.localPosition = myVector / myVector.magnitude;
+
+
 	}
 }
