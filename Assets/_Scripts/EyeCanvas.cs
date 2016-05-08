@@ -8,6 +8,8 @@ public class EyeCanvas : MonoBehaviour {
 	private float width;
 	private float height;
 	private float scale;
+	private bool shownWinText = false;
+	public GameObject winText;
 	// Use this for initialization
 	void Start () {
 		myRect = GetComponent<RectTransform> ();
@@ -20,17 +22,23 @@ public class EyeCanvas : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (player.isWon && shownWinText == false) {
+			Complete();
+		}
 	}
 
 	void GenerateFuel() {
 		for (var i = 0; i < player.GetMaxFuel(); i++) {
 			CanisterUI canister = (CanisterUI)Instantiate(canisterPrefab);
 			canister.transform.SetParent(transform, false);
-			canister.transform.localPosition = new Vector3((i * 100 - 240) * scale,-(height / 2) + (100 * scale),0);
+			canister.transform.localPosition = new Vector3((i * 100 - 240) * scale,-(height / 2) + (200 * scale),0);
 			canister.canisterNumber = i + 1;
 			canister.myPlayer = player;
 			canister.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, 0);
 		}
+	}
+
+	void Complete() {
+
 	}
 }

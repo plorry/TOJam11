@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: 2e2294b5397798e4793e76d0d445c986
+timeCreated: 1462594708
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: afronaut
+    100002: arm1.L
+    100004: arm1.R
+    100006: arm2.L
+    100008: arm2.L_end
+    100010: arm2.R
+    100012: arm2.R_end
+    100014: astronaaat
+    100016: //RootNode
+    100018: control
+    100020: core
+    100022: head
+    100024: head_end
+    100026: hip.L
+    100028: hip.R
+    100030: leg.L
+    100032: leg.L_end
+    100034: leg.R
+    100036: leg.R_end
+    400000: afronaut
+    400002: arm1.L
+    400004: arm1.R
+    400006: arm2.L
+    400008: arm2.L_end
+    400010: arm2.R
+    400012: arm2.R_end
+    400014: astronaaat
+    400016: //RootNode
+    400018: control
+    400020: core
+    400022: head
+    400024: head_end
+    400026: hip.L
+    400028: hip.R
+    400030: leg.L
+    400032: leg.L_end
+    400034: leg.R
+    400036: leg.R_end
+    4300000: afronaut
+    7400000: astronaaat|default
+    7400002: astronaaat|run
+    9500000: //RootNode
+    13700000: afronaut
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: astronaaat|default
+      takeName: astronaaat|default
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: afronaut
+        weight: 1
+      - path: astronaaat
+        weight: 1
+      - path: astronaaat/control
+        weight: 1
+      - path: astronaaat/control/core
+        weight: 1
+      - path: astronaaat/control/core/arm1.L
+        weight: 1
+      - path: astronaaat/control/core/arm1.L/arm2.L
+        weight: 1
+      - path: astronaaat/control/core/arm1.L/arm2.L/arm2.L_end
+        weight: 1
+      - path: astronaaat/control/core/arm1.R
+        weight: 1
+      - path: astronaaat/control/core/arm1.R/arm2.R
+        weight: 1
+      - path: astronaaat/control/core/arm1.R/arm2.R/arm2.R_end
+        weight: 1
+      - path: astronaaat/control/core/head
+        weight: 1
+      - path: astronaaat/control/core/head/head_end
+        weight: 1
+      - path: astronaaat/control/hip.L
+        weight: 1
+      - path: astronaaat/control/hip.L/leg.L
+        weight: 1
+      - path: astronaaat/control/hip.L/leg.L/leg.L_end
+        weight: 1
+      - path: astronaaat/control/hip.R
+        weight: 1
+      - path: astronaaat/control/hip.R/leg.R
+        weight: 1
+      - path: astronaaat/control/hip.R/leg.R/leg.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: astronaaat|run
+      takeName: astronaaat|run
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: afronaut
+        weight: 1
+      - path: astronaaat
+        weight: 1
+      - path: astronaaat/control
+        weight: 1
+      - path: astronaaat/control/core
+        weight: 1
+      - path: astronaaat/control/core/arm1.L
+        weight: 1
+      - path: astronaaat/control/core/arm1.L/arm2.L
+        weight: 1
+      - path: astronaaat/control/core/arm1.L/arm2.L/arm2.L_end
+        weight: 1
+      - path: astronaaat/control/core/arm1.R
+        weight: 1
+      - path: astronaaat/control/core/arm1.R/arm2.R
+        weight: 1
+      - path: astronaaat/control/core/arm1.R/arm2.R/arm2.R_end
+        weight: 1
+      - path: astronaaat/control/core/head
+        weight: 1
+      - path: astronaaat/control/core/head/head_end
+        weight: 1
+      - path: astronaaat/control/hip.L
+        weight: 1
+      - path: astronaaat/control/hip.L/leg.L
+        weight: 1
+      - path: astronaaat/control/hip.L/leg.L/leg.L_end
+        weight: 1
+      - path: astronaaat/control/hip.R
+        weight: 1
+      - path: astronaaat/control/hip.R/leg.R
+        weight: 1
+      - path: astronaaat/control/hip.R/leg.R/leg.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

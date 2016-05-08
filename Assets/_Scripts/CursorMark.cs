@@ -4,7 +4,7 @@ using System.Collections;
 public class CursorMark : MonoBehaviour {
 
 	public GameObject myCamera;
-	public GameObject target;
+	public blastRegulator target;
 	private Vector3 myVector;
 
 	// Use this for initialization
