@@ -35,7 +35,7 @@ public class blastAirlock : MonoBehaviour {
 			blastablesFound = true;
 		}
 
-		if (elapsed > blastTime && animator.GetBool("evacAirlock") == false) {
+		if (elapsed > blastTime && animator.GetBool("evacAirlock") == false || Input.GetKeyDown("space")) {
 			animator.SetBool ("evacAirlock", true);
 			for (int i = 0; i < lights.Length; i++) {
 				var lightObj = lights [i].GetComponent<Light> ();
@@ -52,15 +52,15 @@ public class blastAirlock : MonoBehaviour {
 					blastControl.isBlasting = true;
 				}
 				if(blastables[i].GetComponent<playerBlast>()){
-					print ("player");
 					var playerBlast = blastables[i].GetComponent<playerBlast>();
 					playerBlast.vacuumLocation = vacuumLocaction;
 					playerBlast.isBlasting = true;
 				}
 
 			}
-			GameObject decompression = Instantiate(Resources.Load("Decompression Sound", typeof(GameObject))) as GameObject;
 			blastComplete = true;
+			GameObject decompression = Instantiate(Resources.Load("Decompression Sound", typeof(GameObject))) as GameObject;
+			GameObject spacenoise = Instantiate(Resources.Load("SpaceNoise", typeof(GameObject))) as GameObject;
 		}
 	}
 }

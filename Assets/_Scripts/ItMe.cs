@@ -49,7 +49,7 @@ public class ItMe : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		totalElapsed += Time.deltaTime;
+		GameManager.i.timeSpent += Time.deltaTime;
 		triggerElapsed += Time.deltaTime;
 		if (Cardboard.SDK.Triggered) {
 			if (fuelUnits > 0) {
@@ -83,7 +83,7 @@ public class ItMe : MonoBehaviour {
 			winCounter += Time.deltaTime;
 		}
 		if (winCounter > 5) {
-			Application.LoadLevel("Airlock");
+			Application.LoadLevel("summary");
 		}
 
 		if (fuelUnits == 0) {

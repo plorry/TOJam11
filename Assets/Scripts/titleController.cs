@@ -30,7 +30,14 @@ public class titleController : MonoBehaviour {
 
 		if (Cardboard.SDK.Triggered) {
 			if(target.tag == "Start Button"){
-				Application.LoadLevel("Airlock");
+				if (!GameManager.i) {
+					Application.LoadLevel("Airlock");
+				}
+				if (GameManager.i.GetLevel() <= 4) {
+					Application.LoadLevel("Airlock");
+				} else {
+					Application.LoadLevel("intro");
+				}
 			}
 			if(target.tag == "Goat"){
 				GameObject goatSound = Instantiate(Resources.Load ("GoatSound", typeof(GameObject))) as GameObject;
