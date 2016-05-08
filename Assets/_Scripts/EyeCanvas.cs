@@ -9,7 +9,9 @@ public class EyeCanvas : MonoBehaviour {
 	private float height;
 	private float scale;
 	private bool shownWinText = false;
+	private bool showLoseText = false;
 	public GameObject winText;
+	public GameObject loseText;
 	// Use this for initialization
 	void Start () {
 		myRect = GetComponent<RectTransform> ();
@@ -25,6 +27,9 @@ public class EyeCanvas : MonoBehaviour {
 		if (player.isWon && shownWinText == false) {
 			Complete();
 		}
+		if (player.isLose) {
+			Lose ();
+		}
 	}
 
 	void GenerateFuel() {
@@ -39,6 +44,20 @@ public class EyeCanvas : MonoBehaviour {
 	}
 
 	void Complete() {
+		if (!shownWinText) {
+			GameObject text = Instantiate (winText);
+			text.transform.SetParent (transform, false);
+			text.transform.localPosition = new Vector3 ((10) * scale, -(height / 2) + (700 * scale), 0);
+			shownWinText = true;
+		}
+	}	
 
+	void Lose() {
+		if (!showLoseText) {
+			GameObject text = Instantiate (loseText);
+			text.transform.SetParent (transform, false);
+			text.transform.localPosition = new Vector3 ((10) * scale, -(height / 2) + (700 * scale), 0);
+			showLoseText = true;
+		}
 	}
 }

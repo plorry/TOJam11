@@ -16,11 +16,19 @@ public class ItMe : MonoBehaviour {
 	public Canvas rightEye;
 	public GameObject airlockExit;
 	public bool isWon = false;
+	public bool isLose = false;
 	public GameObject otherExit;
 	// prefabs
 	public CursorMark cursorPrefab;
 	public CardboardAudioSource jetSound;
 	public ExitMark exitPrefab;
+	public float totalElapsed = 0;
+	public float triggerElapsed = 0;
+	public int triggerCount = 0;
+	private float lastJetElapsed = 0;
+
+	private float winCounter = 0;
+	private float lostCounter = 0;
 
 	void Awake () {
 		enabled = false;
@@ -41,6 +49,8 @@ public class ItMe : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		totalElapsed += Time.deltaTime;
+		triggerElapsed += Time.deltaTime;
 		if (Cardboard.SDK.Triggered) {
 			if (fuelUnits > 0) {
 				targetVelocity = eyes.transform.forward;
@@ -50,6 +60,15 @@ public class ItMe : MonoBehaviour {
 				jetSound.Play();
 				GameManager.i.canistersUsed++;
 			}
+			triggerCount++;
+			triggerElapsed = 0;
+			if (triggerCount >= 4) {
+				Application.LoadLevel("intro");
+			}
+		}
+
+		if (triggerElapsed > 1) {
+			triggerCount = 0;
 		}
 
 		if (jetting) {
@@ -58,6 +77,29 @@ public class ItMe : MonoBehaviour {
 			} else {
 				jetting = false;
 			}	
+		}
+
+		if (isWon) {
+			winCounter += Time.deltaTime;
+		}
+		if (winCounter > 5) {
+			Application.LoadLevel("Airlock");
+		}
+
+		if (fuelUnits == 0) {
+			lastJetElapsed += Time.deltaTime;
+		}
+
+		if (lastJetElapsed > 15) {
+			isLose = true;
+		}
+
+		if (isLose) {
+			lostCounter += Time.deltaTime;
+		}
+
+		if (lostCounter > 5) {
+			Application.LoadLevel("Airlock");
 		}
 
 	}
@@ -73,6 +115,7 @@ public class ItMe : MonoBehaviour {
 					GameManager.i.astronauts.Remove(a);
 					Destroy (collisionInfo.gameObject);
 					rb.velocity = Vector3.zero;
+					GameManager.i.peopleSaved++;
 					return;
 				}
 			}
@@ -83,7 +126,6 @@ public class ItMe : MonoBehaviour {
 		if (isActiveAndEnabled) {
 			if (other.transform.tag == "Finish") {
 				Win ();
-				Application.LoadLevel("Airlock");
 			}
 		}
 	}

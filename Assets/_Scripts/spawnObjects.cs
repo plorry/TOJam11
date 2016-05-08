@@ -31,10 +31,14 @@ public class spawnObjects : MonoBehaviour {
 	}
 
 	public void GeneratePeople(int count) {
-		for (int i = 0; i < count; i++) {
-			int astroPosition = Random.Range (0, positionList.Count);
-			SpawnPerson(positionList[astroPosition]);
-			positionList.RemoveAt(astroPosition);
+		if (GameManager.i.GetLevel () == 1) {
+			SpawnPerson (playerSpawn);
+		} else {
+			for (int i = 0; i < count; i++) {
+				int astroPosition = Random.Range (0, positionList.Count);
+				SpawnPerson (positionList [astroPosition]);
+				positionList.RemoveAt (astroPosition);
+			}
 		}
 	}
 	// Setup the level
@@ -48,6 +52,7 @@ public class spawnObjects : MonoBehaviour {
 	private void SpawnPerson(GameObject position) {
 		blastRegulator astronaut = (blastRegulator)Instantiate(astroPrefab);
 		astronaut.transform.position = position.transform.position;
+		astronaut.transform.rotation = position.transform.rotation;
 		player.AddTarget(astronaut);
 		GameManager.i.AddAstronaut(astronaut.GetAstronaut());
 	}

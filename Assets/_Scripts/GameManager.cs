@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 	public int canistersUsed = 0;
 	public int peopleSaved = 0;
 	public float timeSpent = 0;
+	private bool hasIntroed = false;
 
 	private float elapsed;
 
@@ -37,6 +38,14 @@ public class GameManager : MonoBehaviour {
 		if (elapsed > 10 && myPlayer.isActiveAndEnabled) {
 			elapsed = 0;
 			RandomSpeak();
+		}
+
+		if (elapsed > 1 && PickAstronaut ().myPersonality.name == "boss" && hasIntroed == false) {
+			print ("boss speaks");
+			AstronautPerson a = PickAstronaut();
+			print (a);
+			a.Say ("intro");
+			hasIntroed = true;
 		}
 	}
 

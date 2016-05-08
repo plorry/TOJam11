@@ -21,7 +21,9 @@ public class blastAirlock : MonoBehaviour {
 		lights = GameObject.FindGameObjectsWithTag ("Light");
 
 		if (GameManager.i.GetLevel () == 1) {
-			// first level - wait a bit before blast
+			blastTime = 47;
+		} else {
+			blastTime = Random.Range(5,10);
 		}
 	}
 	
