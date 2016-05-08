@@ -58,6 +58,8 @@ public class blastAirlock : MonoBehaviour {
 
 			}
 			GameObject decompression = Instantiate(Resources.Load("Decompression Sound", typeof(GameObject))) as GameObject;
+			GameObject spacenoise = Instantiate(Resources.Load("SpaceNoise", typeof(GameObject))) as GameObject;
+			spacenoise.transform.SetParent(GameManager.i.myPlayer.transform, true);
 			blastComplete = true;
 		}
 	}
